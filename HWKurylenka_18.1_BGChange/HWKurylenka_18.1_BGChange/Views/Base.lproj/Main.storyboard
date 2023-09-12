@@ -95,6 +95,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="redTextFieldEditingChanged:" destination="F97-D7-oRe" eventType="editingDidEnd" id="Op6-Vz-zDO"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -132,6 +135,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="greenTextFieldEditingChanged:" destination="F97-D7-oRe" eventType="editingDidEnd" id="w8X-44-vUC"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -168,6 +174,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="blueTextFieldEditingChanged:" destination="F97-D7-oRe" eventType="editingDidEnd" id="9e4-mY-z0r"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -232,6 +241,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="opacityTextFieldEditingChanged:" destination="F97-D7-oRe" eventType="editingDidEnd" id="HhP-0I-xCq"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
