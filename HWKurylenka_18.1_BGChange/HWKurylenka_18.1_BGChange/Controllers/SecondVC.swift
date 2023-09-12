@@ -76,6 +76,36 @@ class SecondVC: UIViewController {
         }
     }
 
+    @IBAction func hexColorTextFieldEditingChanged(_ sender: UITextField) {
+        /// Извлечение значения из hexColorTextField
+        if let hexColor = sender.text, hexColor.hasPrefix("#") && hexColor.count == 9 {
+            /// Удаляем символ '#' и конвертируем строку в целое число
+            if let hexValue = Int(hexColor.dropFirst(), radix: 16) {
+                /// Извлечение компонентов цвета и прозрачности из значения
+                let red = Float((hexValue >> 24) & 0xFF) / 255.0
+                let green = Float((hexValue >> 16) & 0xFF) / 255.0
+                let blue = Float((hexValue >> 8) & 0xFF) / 255.0
+                let opacity = Float(hexValue & 0xFF) / 255.0
+                // Установка значения слайдеров и текстовых полей
+                redSlider.value = red
+                greenSlider.value = green
+                blueSlider.value = blue
+                opacitySlider.value = opacity
+                                
+                redTextField.text = String(format: "%.2f", red)
+                greenTextField.text = String(format: "%.2f", green)
+                blueTextField.text = String(format: "%.2f", blue)
+                opacityTextField.text = String(format: "%.2f", opacity)
+                    
+                }
+            }
+                
+            updateHexColor()
+    }
+
+    
+    
+    
     
     func updateHexColor() {
         let red = Int(redSlider.value * 255)

@@ -211,6 +211,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="hexColorTextFieldEditingChanged:" destination="F97-D7-oRe" eventType="editingDidEnd" id="Ocv-xC-mPS"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
