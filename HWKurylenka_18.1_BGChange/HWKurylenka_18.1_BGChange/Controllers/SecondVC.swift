@@ -115,6 +115,18 @@ class SecondVC: UIViewController {
         let hexColor = String(format: "#%02X%02X%02X%02X", red, green, blue, opacity)
         
         hexColorTextField.text = hexColor
+        
+        /// Создать UIColor на основе компонентов цвета и прозрачности
+        let color = UIColor(
+            red: CGFloat(red) / 255.0,
+            green: CGFloat(green) / 255.0,
+            blue: CGFloat(blue) / 255.0,
+            alpha: CGFloat(opacity) / 255.0
+        )
+        
+        /// Установить фоновый цвет colorPreviewView
+        colorPreviewView.backgroundColor = color
+
     }
 
     
