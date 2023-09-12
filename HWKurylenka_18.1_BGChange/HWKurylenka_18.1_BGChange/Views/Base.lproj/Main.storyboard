@@ -286,6 +286,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="doneWithDelegateButtonTapped:" destination="F97-D7-oRe" eventType="touchUpInside" id="rZp-33-r4F"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPk-Aq-Ycl">
                                                 <rect key="frame" x="184" y="0.0" width="159" height="53.333333333333336"/>
@@ -307,6 +310,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="doneWithClosureButtonTapped:" destination="F97-D7-oRe" eventType="touchUpInside" id="PtN-Oz-EdS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

@@ -6,6 +6,11 @@
 
 import UIKit
 
+/// Протокол делегата для кнопки
+protocol SecondVCDelegate {
+    func didFinishWithColor(_ color: UIColor)
+}
+
 class SecondVC: UIViewController {
 
     @IBOutlet weak var redSlider: UISlider!
@@ -102,10 +107,12 @@ class SecondVC: UIViewController {
                 
             updateHexColor()
     }
-
     
+    //var color: UIColor?
+    /// Свойство для делегирования для хранения ссылки на объект, который будет выступать в роли делегата
+    var delegate: SecondVCDelegate?
     
-    
+    var colorSelectionClosure: ((UIColor) -> Void)?
     
     func updateHexColor() {
         let red = Int(redSlider.value * 255)
@@ -130,15 +137,25 @@ class SecondVC: UIViewController {
     }
 
     
+    /// Вызов метода делегата при клике по кнопке Done with delegates
     
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBAction func doneWithDelegateButtonTapped(_ sender: UIButton) {
+        let selectedColor = colorPreviewView.backgroundColor ?? .green
+        delegate?.didFinishWithColor(selectedColor)
+        navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func doneWithClosureButtonTapped(_ sender: UIButton) {
+        /// Получить выбранный цветиз colorPreviewView
+        let selectedColor = colorPreviewView.backgroundColor ?? .white
+        
+        // Вызов замыканиz для передачи цвета обратно в FirstVC
+        colorSelectionClosure?(selectedColor)
+        
+        // Закрыть SecondVC с помощью navigationController
+        navigationController?.popViewController(animated: true)
+    }
+
     
 
     /*
