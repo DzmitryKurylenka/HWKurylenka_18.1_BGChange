@@ -8,12 +8,54 @@ import UIKit
 
 class SecondVC: UIViewController {
 
+    @IBOutlet weak var redSlider: UISlider!
+    @IBOutlet weak var greenSlider: UISlider!
+    @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var opacitySlider: UISlider!
     
+    @IBOutlet weak var redTextField: UITextField!
+    @IBOutlet weak var greenTextField: UITextField!
+    @IBOutlet weak var blueTextField: UITextField!
+    @IBOutlet weak var opacityTextField: UITextField!
+    @IBOutlet weak var hexColorTextField: UITextField!
     
+    @IBOutlet weak var colorPreviewView: UIView!
     
-    
-    
-    
+    /// Обновление текстовых полей на основе слайдеров
+       @IBAction func redSliderValueChange(_ sender: UISlider) {
+           redTextField.text = String(format: "%.2f", redSlider.value)
+           /// Вызов функции для обновления Hex Color
+           updateHexColor()
+       }
+       
+       @IBAction func grenSliderValueChange(_ sender: Any) {
+           greenTextField.text = String(format: "%.2f", greenSlider.value)
+           /// Вызов функции для обновления Hex Color
+           updateHexColor()
+       }
+       
+       @IBAction func blueSliderValueChange(_ sender: Any) {
+           blueTextField.text = String(format: "%.2f", blueSlider.value)
+           /// Вызов функции для обновления Hex Color
+           updateHexColor()
+       }
+       
+    @IBAction func opacitySliderValueChange(_ sender: Any) {
+        opacityTextField.text = String(format: "%.2f", opacitySlider.value)
+        /// Вызов функции для обновления Hex Color
+        updateHexColor()
+    }
+
+    func updateHexColor() {
+        let red = Int(redSlider.value * 255)
+        let green = Int(greenSlider.value * 255)
+        let blue = Int(blueSlider.value * 255)
+        let opacity = Int(opacitySlider.value * 255)
+        let hexColor = String(format: "#%02X%02X%02X%02X", red, green, blue, opacity)
+        
+        hexColorTextField.text = hexColor
+    }
+
     
     
     
